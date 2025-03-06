@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 
@@ -19,11 +19,32 @@ The details of the process depend on which door you are trying to enter.
 
 */
 
+let line = "NOW";
 
 function frontDoorResponse(line) {
 	return line[0];
 }
 
+function frontDoorPassword(word) {
+	let inputWord = word;
+	let firstLetter = inputWord.slice(0, 1);
+	let otherLetters = inputWord.slice(1).toLowerCase();
+	let capitalizedLetter = firstLetter.toUpperCase();
+	return capitalizedLetter + otherLetters;
+}
 
+function backDoorResponse(line) {
+	let trimedLine = line.trim();
+	return trimedLine.slice(-1);
+}
 
+function backDoorPassword(line) {
+	return frontDoorPassword(line) + ", please";
+}
 
+console.log(
+	frontDoorResponse(line),
+	frontDoorPassword(line),
+	backDoorResponse(line),
+	backDoorPassword(line)
+);

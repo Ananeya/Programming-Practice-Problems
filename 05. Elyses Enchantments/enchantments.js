@@ -20,6 +20,7 @@ To make things a bit easier she only uses the cards 1 to 10 so her stack of card
 let position = 2;
 let cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let replacementCard = 95
+let newCard = 59;
 
 function getItem(cards, position) {
 	return cards[position];
@@ -30,7 +31,19 @@ function setItem(cards, position, replacementCard) {
 	return cards;
  }
 
- console.log(getItem(cards, position), setItem(cards, position, replacementCard));
+function insertItemAtTop(cards, newCard) {
+	cards.push(newCard);
+	return cards;
+}
+
+function removeItem(cards, position) {
+  cards.splice(position, 1);
+  return cards;
+}
+
+
+
+ console.log(getItem(cards, position), setItem(cards, position, replacementCard), insertItemAtTop(cards, newCard), removeItem(cards, position));
 
 
  

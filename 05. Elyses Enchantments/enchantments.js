@@ -21,6 +21,7 @@ let position = 2;
 let cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let replacementCard = 95
 let newCard = 59;
+let stackSize = 10;
 
 function getItem(cards, position) {
 	return cards[position];
@@ -41,9 +42,37 @@ function removeItem(cards, position) {
   return cards;
 }
 
+function removeItemFromTop(cards) {
+	cards.pop();
+	return cards;
+}
+
+function insertItemAtBottom(cards, newCard) {
+	cards.unshift(newCard);
+	return cards;
+}
+
+function removeItemAtBottom(cards) {
+	cards.shift();
+	return cards;
+}
+
+function checkSizeOfStack(cards, stackSize) {
+	return stackSize === cards.length ? true : false;
+}
 
 
- console.log(getItem(cards, position), setItem(cards, position, replacementCard), insertItemAtTop(cards, newCard), removeItem(cards, position));
+
+
+ console.log(
+		getItem(cards, position),
+		setItem(cards, position, replacementCard),
+		insertItemAtTop(cards, newCard),
+		removeItem(cards, position),
+		removeItemFromTop(cards),
+		insertItemAtBottom(cards, newCard),
+		checkSizeOfStack(cards, stackSize)
+ );
 
 
  

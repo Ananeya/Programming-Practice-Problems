@@ -19,3 +19,15 @@ function totalBirdCount(birdsPerDay) {
 	}
 	return totalNumberOfBirds;
 }
+
+function birdsInWeek(birdsPerDay, week) {
+	let totalNumberOfBirds = 0;
+	let startIndex = week * 7 - 7;
+	let endingIndex = startIndex + 7;
+	for (let i = startIndex; i < endingIndex; i++) {
+		totalNumberOfBirds += birdsPerDay[i];
+	}
+	return totalNumberOfBirds;
+}
+
+

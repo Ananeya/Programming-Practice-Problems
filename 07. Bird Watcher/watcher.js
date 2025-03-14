@@ -12,6 +12,9 @@ Now you want to determine the total number of birds that you counted, calculate 
 
 */
 
+let birdsPerDay = [2, 5, 0, 9, 3, 1, 7, 12, 8];
+let week = 1;
+
 function totalBirdCount(birdsPerDay) {
 	let totalNumberOfBirds = 0;
 	for (let i = 0; i < birdsPerDay.length; i++) {
@@ -30,4 +33,15 @@ function birdsInWeek(birdsPerDay, week) {
 	return totalNumberOfBirds;
 }
 
+function fixBirdCountLog(birdsPerDay) {
+	for (let i = 0; i < birdsPerDay.length; i += 2) {
+		birdsPerDay[i] += 1;
+	}
+	return birdsPerDay;
+}
 
+console.log(
+	totalBirdCount(birdsPerDay),
+	birdsInWeek(birdsPerDay, week),
+	fixBirdCountLog(birdsPerDay)
+);
